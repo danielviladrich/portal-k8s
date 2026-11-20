@@ -9,5 +9,5 @@ spec:
     name: letsencrypt-prod
     kind: ClusterIssuer
   dnsNames:
-    - {{ .Values.ingress.subdomain }}.{{ .Values.global.baseDomain }}
+    - {{ .Values.ingress.host | default (printf "%s.%s" .Values.ingress.subdomain .Values.global.baseDomain) }}
 {{- end }}

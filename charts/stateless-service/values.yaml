@@ -17,3 +17,5 @@ resources: {}
 ingress:
   enabled: false
   subdomain: ""
+  # Optional full host name. Defaults to <subdomain>.<global.baseDomain> when empty.
+  host: ""
